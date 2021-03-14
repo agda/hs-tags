@@ -1,28 +1,48 @@
-name: hTags
-version: 0.1.5
-cabal-version: >= 1.8
-author: Ulf Norell, Nils Anders Danielsson, Andreas Abel
-build-type: Simple
-tested-with: GHC == 8.0.2
-             GHC == 8.2.2
-             GHC == 8.4.4
-             GHC == 8.6.5
-             GHC == 8.8.4
-             GHC == 8.10.4
-             GHC == 9.0.1
+name:            hTags
+version:         0.1.5
+cabal-version:   >= 1.10
+build-type:      Simple
+license:         OtherLicense
+license-file:    LICENSE
+copyright:       (c) 2005-2021 The Agda Team.
+author:          Ulf Norell, Nils Anders Danielsson, Andreas Abel
+maintainer:      Andreas Abel <andreas.abel@gu.se>
+bug-reports:     https://github.com/agda/hTags/issues
+category:        Development
+synopsis:        Create tag files (ctags and etags) for Haskell code.
+description:     .
+  Executable to generate a tags (ctags) or TAGS (etags) file
+  for a bunch of Haskell files.
+  These files are used by editors (e.g. TAGS by Emacs) to
+  implement jump-to-definition (e.g. M-. in Emacs).
+
+tested-with:
+  GHC == 8.0.2
+  GHC == 8.2.2
+  GHC == 8.4.4
+  GHC == 8.6.5
+  GHC == 8.8.4
+  GHC == 8.10.4
+  GHC == 9.0.1
+
+extra-source-files:
+  CHANGELOG.md
+  README.md
 
 executable hTags
-  main-is: Main.hs
-  other-modules: Tags
+  main-is:          Main.hs
+  other-modules:    Tags
+  default-language: Haskell2010
 
-  build-depends:  base >= 4.9.0.0 && < 4.16
-                , Cabal >= 1.24.0.0  && < 3.5
-                , containers >= 0.5.7.1 && < 0.7
-                , directory >= 1.2.6.2 && < 1.4
-                , filepath >= 1.4.1.0 && < 1.5
-                , ghc >= 8.0.2 && < 9.1
-                , mtl >= 2.2.1 && < 2.3
-                , process >= 1.4.2.0 && < 1.7
-                , strict >= 0.3.2 && < 0.5
+  build-depends:
+      base        >= 4.9.0.0   &&  < 4.16
+    , Cabal       >= 1.24.0.0  &&  < 3.5
+    , containers  >= 0.5.7.1   &&  < 0.7
+    , directory   >= 1.2.6.2   &&  < 1.4
+    , filepath    >= 1.4.1.0   &&  < 1.5
+    , ghc         >= 8.0.2     &&  < 9.1
+    , mtl         >= 2.2.1     &&  < 2.3
+    , process     >= 1.4.2.0   &&  < 1.7
+    , strict      >= 0.3.2     &&  < 0.5
 
   ghc-options: -fwarn-incomplete-patterns

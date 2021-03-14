@@ -1,0 +1,34 @@
+# Keep this file in alphabetic order please!
+# Sort with the command `sort -uf`
+*.dump-hi
+*.hi
+*.hie
+*.hie-boot
+*.imports
+*.o
+*.project.local
+*.tmp
+*.tmp.*
+*~
+.*.sw[a-p]
+.*.vim
+.cabal-sandbox/
+.DS_Store
+.ghc.environment.*
+.ghci.local
+.stack-work-*/
+.stack-work/
+.sw[a-p]
+.vscode/settings.json
+.\#*
+autom4te.cache
+cabal.sandbox.config
+config.log
+config.status
+configure
+dist-*/
+dist/
+pkg-build*
+stack.yaml
+stack*.yaml.lock
+\#*\#
