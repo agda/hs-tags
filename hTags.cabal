@@ -29,6 +29,15 @@ extra-source-files:
   CHANGELOG.md
   README.md
 
+source-repository head
+  type:     git
+  location: https://github.com/agda/hTags.git
+
+source-repository this
+  type:     git
+  location: https://github.com/agda/hTags.git
+  tag:      v0.1.5
+
 executable hTags
   main-is:          Main.hs
   other-modules:    Tags
