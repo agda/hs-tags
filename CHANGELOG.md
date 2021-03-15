@@ -1,4 +1,4 @@
-# hTags
+# hs-tags
 
 Version history.
 

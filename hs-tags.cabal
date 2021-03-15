@@ -1,4 +1,4 @@
-name:            hTags
+name:            hs-tags
 version:         0.1.5
 cabal-version:   >= 1.10
 build-type:      Simple
@@ -7,7 +7,7 @@ license-file:    LICENSE
 copyright:       (c) 2005-2021 The Agda Team.
 author:          Ulf Norell, Nils Anders Danielsson, Andreas Abel
 maintainer:      Andreas Abel <andreas.abel@gu.se>
-bug-reports:     https://github.com/agda/hTags/issues
+bug-reports:     https://github.com/agda/hs-tags/issues
 category:        Development
 synopsis:        Create tag files (ctags and etags) for Haskell code.
 description:     .
@@ -31,14 +31,14 @@ extra-source-files:
 
 source-repository head
   type:     git
-  location: https://github.com/agda/hTags.git
+  location: https://github.com/agda/hs-tags.git
 
 source-repository this
   type:     git
-  location: https://github.com/agda/hTags.git
+  location: https://github.com/agda/hs-tags.git
   tag:      v0.1.5
 
-executable hTags
+executable hs-tags
   main-is:          Main.hs
   other-modules:    Tags
   default-language: Haskell2010
