@@ -25,3 +25,25 @@ hTags
                                     language options from
                                     (library options are used)
 ```
+
+Some related projects:
+
+- [hasktags](http://hackage.haskell.org/package/hasktags):
+  popular ctags and etags generator, using its own parser.
+
+- [fast-tags](https://hackage.haskell.org/package/fast-tags):
+  ctags and etags, fast, incremental, using its own parser.
+
+- [ghc-tags-plugin](https://hackage.haskell.org/package/ghc-tags-plugin):
+  ctags and etags emitted during compilation by a ghc-plugin.
+
+- [hothasktags](https://hackage.haskell.org/package/hothasktags)
+  (_unmaintained_?):
+  ctags generator, using the [haskell-src-exts](https://hackage.haskell.org/package/haskell-src-exts) parser.
+
+- [htags](https://hackage.haskell.org/package/htags):
+  ctags for Haskell 98, using the [haskell-src](https://hackage.haskell.org/package/haskell-src) parser.
+
+- [codex](https://hackage.haskell.org/package/codex):
+  ctags and etags for dependencies, using
+  [hasktags](http://hackage.haskell.org/package/hasktags).
