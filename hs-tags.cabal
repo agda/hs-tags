@@ -2,10 +2,10 @@ name:            hs-tags
 version:         0.1.5
 cabal-version:   >= 1.10
 build-type:      Simple
-license:         OtherLicense
+license:         MIT
 license-file:    LICENSE
 copyright:       (c) 2005-2021 The Agda Team.
-author:          Ulf Norell, Nils Anders Danielsson, Andreas Abel
+author:          Ulf Norell, Nils Anders Danielsson, Andrés Sicard-Ramírez, Andreas Abel, Francesco Mazzoli, Paolo G. Giarrusso
 maintainer:      Andreas Abel <andreas.abel@gu.se>
 bug-reports:     https://github.com/agda/hs-tags/issues
 category:        Development
