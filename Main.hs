@@ -12,6 +12,7 @@ import Data.Char
 import qualified Data.Traversable as T
 import Data.List
 import Data.Maybe
+import Data.Version ( showVersion )
 import System.Environment
 import System.IO
 import qualified System.IO.Strict as Strict
@@ -98,6 +99,7 @@ import Distribution.PackageDescription.Parse hiding (ParseResult)
 #endif
 
 import Tags
+import Paths_hs_tags ( version )
 
 instance MonadTrans GhcT where
   lift m = GhcT $ const m
@@ -262,7 +264,8 @@ getOptions = do
 
 printUsage h = do
   prog <- getProgName
-  hPutStrLn h $ usageInfo prog options
+  let header = unwords [ prog, "version", showVersion version ]
+  hPutStrLn h $ usageInfo header options
 
 data Options = Options
   { optCTags       :: Bool
