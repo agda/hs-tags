@@ -2,6 +2,8 @@
 
 Version history.
 
+## 0.1.6 unreleased
+
 ## 0.1.5 released 2021-03-16
 
 - initial release
