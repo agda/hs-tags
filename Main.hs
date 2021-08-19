@@ -1,6 +1,7 @@
-{-# LANGUAGE CPP                 #-}
-{-# LANGUAGE PatternSynonyms     #-}
-{-# LANGUAGE ScopedTypeVariables #-}
+{-# LANGUAGE CPP                      #-}
+{-# LANGUAGE NondecreasingIndentation #-}
+{-# LANGUAGE PatternSynonyms          #-}
+{-# LANGUAGE ScopedTypeVariables      #-}
 
 module Main where
 
@@ -21,6 +22,8 @@ import System.FilePath
 import System.Directory
 import System.Process
 import System.Console.GetOpt
+
+import qualified GHC.Paths as GHC
 
 import GHC
   ( DynFlags
@@ -197,9 +200,15 @@ cabalConfToOpts desc = langOpts ++ extOpts
     extOpts = map extToOpt exts
     langOpts = langToOpt <$> maybeToList maybeLang
 
+usage :: IO ()
+usage = do
+    printUsage stdout
+    exitSuccess
+
 main :: IO ()
 main = do
   opts <- getOptions
+  if optHelp opts then usage else do
 
   let agdaReadPackageDescription =
 #if MIN_VERSION_Cabal(2,0,0)
@@ -209,12 +218,8 @@ main = do
 #endif
 
   pkgDesc <- T.mapM (agdaReadPackageDescription minBound) $ optCabalPath opts
-  let go | optHelp opts = do
-            printUsage stdout
-            exitSuccess
-         | otherwise = do
-            top : _ <- lines <$> runCmd "ghc --print-libdir"
-            ts <- runGhc (Just top) $ do
+  do
+            ts <- runGhc (Just GHC.libdir) $ do
               dynFlags <- getSessionDynFlags
               let dynFlags' =
                     dynFlags {
@@ -247,7 +252,6 @@ main = do
               writeFile (optCTagsFile opts) $ unlines $ map show sts
             when (optETags opts) $
               writeFile (optETagsFile opts) $ showETags ts
-  go
 
 getOptions :: IO Options
 getOptions = do
