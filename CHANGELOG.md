@@ -2,9 +2,11 @@
 
 Version history.
 
-## 0.1.6 unreleased
+## 0.1.5.1 Andreas Abel 2021-08-22
 
-## 0.1.5 released 2021-03-16
+- fixed #3: correctly obtain GHC's libdir
+
+## 0.1.5 Andreas Abel 2021-03-16
 
 - initial release
 - tested with GHC 8.0.2 - 9.0.1
