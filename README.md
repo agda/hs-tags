@@ -1,3 +1,9 @@
+[![Hackage version](https://img.shields.io/hackage/v/hs-tags.svg?label=Hackage&color=informational)](http://hackage.haskell.org/package/hs-tags)
+[![Hackage CI](https://matrix.hackage.haskell.org/api/v2/packages/hs-tags/badge)](https://matrix.hackage.haskell.org/package/hs-tags)
+[![hs-tags on Stackage Nightly](https://stackage.org/package/hs-tags/badge/nightly)](https://stackage.org/nightly/package/hs-tags)
+[![Stackage LTS version](https://www.stackage.org/package/hs-tags/badge/lts?label=Stackage)](https://www.stackage.org/package/hs-tags)
+[![Cabal build](https://github.com/agda/hs-tags/workflows/Haskell-CI/badge.svg)](https://github.com/agda/hs-tags/actions)
+
 hs-tags - Generate tags for Haskell code
 ========================================
 
