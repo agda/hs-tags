@@ -2,7 +2,7 @@
 
 Version history.
 
-## 0.1.6 unreleased
+## 0.1.5.2 (2021-09-10)
 
 - Support GHC 8.10.7.
 
