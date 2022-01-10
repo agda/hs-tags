@@ -2,11 +2,14 @@
 
 Version history.
 
-## 0.1.6 unreleased
+## 0.1.5.3 Andreas Abel 2022-01-10
 
-## 0.1.5.2 (2021-09-10)
+- Fixed #6: build failure with GHC 9.0.2.
+- Tested with GHC 8.0.2 - 9.0.2.
 
-- Support GHC 8.10.7.
+## 0.1.5.2 Andrés Sicard Ramirez 2021-09-10
+
+- `stack.yaml` file for GHC 8.10.7.
 
 ## 0.1.5.1 Andreas Abel 2021-08-22
 
