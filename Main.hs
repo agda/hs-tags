@@ -51,7 +51,7 @@ import GHC.Data.StringBuffer ( hGetStringBuffer )
 import GHC.Driver.Monad      ( GhcT(..), Ghc(..) )
 import GHC.Driver.Phases     ( pattern Cpp, pattern HsSrcFile )
 import GHC.Driver.Pipeline   ( preprocess )
-import GHC.Driver.Session    ( pattern IncludeSpecs, opt_P, parseDynamicFilePragma, sOpt_P, toolSettings )
+import GHC.Driver.Session    ( includePathsGlobal, opt_P, parseDynamicFilePragma, sOpt_P, toolSettings )
 import GHC.Parser            ( parseModule )
 import GHC.Parser.Lexer      ( P(..), ParseResult(..), PState, mkPState, getErrorMessages )
 import GHC.Settings          ( toolSettings_opt_P )
@@ -76,7 +76,7 @@ import SrcLoc         ( mkRealSrcLoc, noLoc, unLoc )
 import StringBuffer   ( hGetStringBuffer )
 
 #if MIN_VERSION_ghc(8,6,1)
-import DynFlags       ( pattern IncludeSpecs )
+import DynFlags       ( includePathsGlobal )
 #endif
 
 #if MIN_VERSION_ghc(8,10,1)
@@ -236,8 +236,9 @@ main = do
 #endif
 
 #if MIN_VERSION_ghc(8,6,1)
-                    , includePaths = case includePaths dynFlags of
-                                       IncludeSpecs qs gs -> IncludeSpecs qs (optIncludePath opts ++ gs)
+                    , includePaths =
+                        let includeSpecs = includePaths dynFlags
+                        in  includeSpecs { includePathsGlobal = optIncludePath opts ++ includePathsGlobal includeSpecs }
 #else
                     , includePaths = optIncludePath opts ++ includePaths dynFlags
 #endif
