@@ -32,3 +32,4 @@ pkg-build*
 stack.yaml
 stack*.yaml.lock
 \#*\#
+/TAGS
